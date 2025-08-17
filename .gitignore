@@ -8,6 +8,12 @@
 /frontend/node_modules/
 /backend/node_modules/
 
+# Dependency directories
+node_modules/
+dist/
+dist-ssr/
+
+
 # We are using Bun. The bun.lockb file SHOULD BE COMMITTED to your repository
 # to ensure consistent, reliable installations across all environments.
 # Do NOT add bun.lockb to this file.
