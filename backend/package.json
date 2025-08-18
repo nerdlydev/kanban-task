@@ -1,0 +1,9 @@
+{
+  "name": "kanban-backend",
+  "scripts": {
+    "dev": "bun --watch index.ts",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
+  }
+}
