@@ -4,7 +4,7 @@ function App() {
   const [serverStatus, setServerStatus] = useState("Checking...");
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/health")
+    fetch("http://localhost:3000/api/health")
       .then((res) => res.json())
       .then(() => setServerStatus("✅ Connected"))
       .catch(() => setServerStatus("❌ Server not running"));
