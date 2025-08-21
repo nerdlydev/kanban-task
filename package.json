@@ -1,14 +1,33 @@
 {
-  "name": "kanban-board",
-  "private": true,
-  "scripts": {
-    "dev": "bunx concurrently \"bun run backend:dev\" \"bun run frontend:dev\"",
-    "backend:dev": "cd backend && bun run dev",
-    "frontend:dev": "cd frontend && bun run dev",
-    "db:setup": "cd backend && bun run db:push && bun run db:generate",
-    "db:studio": "cd backend && bun run db:studio"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+	"name": "kanban-board",
+	"private": true,
+	"scripts": {
+		"dev": "bunx concurrently \"bun run backend:dev\" \"bun run frontend:dev\"",
+		"backend:dev": "cd backend && bun run dev",
+		"frontend:dev": "cd frontend && bun run dev",
+		"db:setup": "cd backend && bun run db:push && bun run db:generate",
+		"db:studio": "cd backend && bun run db:studio",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+		"lint:backend": "eslint backend --ext .ts",
+		"lint:frontend": "eslint frontend --ext .ts,.tsx",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"type-check": "cd backend && tsc --noEmit && cd ../frontend && tsc --noEmit",
+		"check-all": "bun run type-check && bun run lint && bun run format:check",
+		"clean": "rm -rf backend/dist frontend/dist backend/node_modules frontend/node_modules"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.33.0",
+		"@typescript-eslint/eslint-plugin": "^8.40.0",
+		"@typescript-eslint/parser": "^8.40.0",
+		"concurrently": "^8.2.2",
+		"eslint": "^9.33.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"prettier": "^3.6.2"
+	}
 }

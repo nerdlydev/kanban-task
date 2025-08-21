@@ -20,4 +20,4 @@ export default {
   fetch: app.fetch,
 };
 
-console.log("🚀 app running on http://localhost:5173");
+console.log("🚀 frontend is running on http://localhost:5173");

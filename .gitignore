@@ -84,3 +84,8 @@ out/
 
 
 /generated/prisma
+
+
+.prettierignore 
+eslint.config.js 
+prettier.config.js
