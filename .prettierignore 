@@ -3,7 +3,7 @@
 node_modules
 \*\*/node_modules
 
-# Build outputs
+<!-- # Build outputs -->
 
 dist
 build
@@ -11,11 +11,11 @@ build
 out
 coverage
 
-# Prisma & DB
+<!-- # Prisma & DB -->
 
 prisma/migrations
 
-# Env files
+<!-- # Env files -->
 
 _.env
 _.env.local
@@ -23,11 +23,11 @@ _.env.development.local
 _.env.test.local
 \*.env.production.local
 
-# Logs
+<!-- # Logs -->
 
 \*.log
 
-# Misc
+<!-- # Misc -->
 
 package-lock.json
 bun.lockb

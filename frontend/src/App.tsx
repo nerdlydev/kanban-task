@@ -1,57 +1,79 @@
-import { useState, useEffect } from "react";
+import { Button, Card, Flex, Text } from '@radix-ui/themes'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [serverStatus, setServerStatus] = useState("Checking...");
+	const [serverStatus, setServerStatus] = useState('Checking...')
 
-  useEffect(() => {
-    fetch("http://localhost:3000/api/health")
-      .then((res) => res.json())
-      .then(() => setServerStatus("✅ Connected"))
-      .catch(() => setServerStatus("❌ Server not running"));
-  }, []);
+	useEffect(() => {
+		fetch('http://localhost:3000/api/health')
+			.then((res) => res.json())
+			.then(() => setServerStatus('✅ Connected'))
+			.catch(() => setServerStatus('❌ Server not running'))
+	}, [])
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">Kanban Board</h1>
-          <p className="text-sm text-gray-600">Server: {serverStatus}</p>
-          <p className="text-xs text-blue-600">⚡ Pure Bun Power!</p>
-        </div>
-      </header>
+	return (
+		// <div className="min-h-screen bg-gray-50">
+		// 	<header className="bg-white shadow-sm border-b">
+		// 		<div className="max-w-7xl mx-auto px-4 py-4">
+		// 			<h1 className="text-2xl font-bold text-gray-900">Kanban Board</h1>
+		// 			<p className="text-sm text-gray-600">Server: {serverStatus}</p>
+		// 			<p className="text-xs text-blue-600">⚡ Pure Bun Power!</p>
+		// 		</div>
+		// 	</header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold mb-4">
-            🚀 Pure Bun Setup Complete!
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Everything running with Bun - blazing fast!
-          </p>
+		// 	<main className="max-w-7xl mx-auto px-4 py-8">
+		// 		<div className="bg-white rounded-lg shadow p-6">
+		// 			<h2 className="text-xl font-semibold mb-4">🚀 Pure Bun Setup Complete!</h2>
+		// 			<p className="text-gray-600 mb-4">
+		// 				Everything running with Bun - blazing fast!
+		// 			</p>
 
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div className="space-y-2">
-              <div>✅ React + TypeScript</div>
-              <div>✅ Hono + Bun backend</div>
-              <div>✅ PostgreSQL database</div>
-            </div>
-            <div className="space-y-2">
-              <div>✅ Prisma ORM</div>
-              <div>✅ Tailwind CSS</div>
-              <div>✅ All dev tools ready</div>
-            </div>
-          </div>
+		// 			<div className="grid grid-cols-2 gap-4 text-sm">
+		// 				<div className="space-y-2">
+		// 					<div>✅ React + TypeScript</div>
+		// 					<div>✅ Hono + Bun backend</div>
+		// 					<div>✅ PostgreSQL database</div>
+		// 				</div>
+		// 				<div className="space-y-2">
+		// 					<div>✅ Prisma ORM</div>
+		// 					<div>✅ Tailwind CSS</div>
+		// 					<div>✅ All dev tools ready</div>
+		// 				</div>
+		// 			</div>
 
-          <div className="mt-6 p-4 bg-green-50 rounded-lg">
-            <h3 className="font-medium text-green-800 mb-2">Ready to build!</h3>
-            <p className="text-green-700 text-sm">
-              Your Kanban board foundation is complete. Time to add features!
-            </p>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
+		// 			<div className="mt-6 p-4 bg-green-50 rounded-lg">
+		// 				<h3 className="font-medium text-green-800 mb-2">Ready to build!</h3>
+		// 				<p className="text-green-700 text-sm">
+		// 					Your Kanban board foundation is complete. Time to add features!
+		// 				</p>
+		// 			</div>
+		// 		</div>
+		// 	</main>
+		// 	<Card size="3" style={{ maxWidth: 400 }}>
+		// 		<Flex direction="column" gap="3">
+		// 			<Text size="5" weight="bold">
+		// 				Welcome to Radix
+		// 			</Text>
+		// 			<Text size="3">This is a simple example using Radix Themes 🚀</Text>
+		// 			<Button>Click Me</Button>
+		// 		</Flex>
+		// 	</Card>
+		// </div>
+		<>
+			<Card size="3" style={{ maxWidth: 400, position: 'relative' }}>
+				<Flex direction="column" gap="3">
+					<Text size="5" weight="bold">
+						Welcome to Radix
+					</Text>
+					<Text size="3">This is a simple example using Radix Themes 🚀</Text>
+					<Button>Click Me</Button>
+				</Flex>
+			</Card>
+			<div>
+				<p> Something in the way ...</p>
+			</div>
+		</>
+	)
 }
 
-export default App;
+export default App
